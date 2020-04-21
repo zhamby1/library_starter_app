@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Descr:</strong>
+  <%= @book.descr %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author.name%>
+</p>
+
+<% if @book.image.attached? %>
+<!-- @post.image.present? will always return true, use attached? to check presence -->
+  <p>
+    <strong>Book Cover:</strong>
+    <br>
+    <%= image_tag @book.image %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
